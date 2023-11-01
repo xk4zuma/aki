@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chelsea FineASF🔥🥵</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f0f0f0;
+            transition: background-color 0.3s;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        h1 {
+            margin: 20px;
+            color: #333;
+            transition: color 0.3s;
+        }
+
+        p {
+            color: #555;
+        }
+
+        img {
+            transition: transform 0.2s;
+        }
+
+        button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.2s;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+    <h3><br>Kainit sa kalibutan<br>biskan unsaon nakog paypay <br>ikaw ragyud akung kalipay 🫢<br> *w/ bisaya rizz*</h3>
+    <img id="responseImage" src="https://media.giphy.com/media/KI5JqBqOKCPjG/giphy.gif" width="75%">
+    <p id="question">ask lang ko if <br>naa kay gina entertain ron?🥸</p>
+    <button id="yesButton">Naa</button>
+    <button id="noButton">Wala</button>
+
+    <p class="hidden" id="message1">pedi ako nalang e-entertain nmo?</p>
+    <button class="hidden" id="okayButton1" onclick="moveButton()">dili lang</button>
+    <button class="hidden" id="notOkayButton" onclick="notOkayResponse()">pedi</button>
+
+    <p class="hidden" id="message2">Yiee.. so it means pinapatawad mo na ako hehe.</p>
+    <button class="hidden" id="okayButton2">Yeah</button>
+
+    <p class="hidden" id="message3">Tara, play ba ulit tayo 1v1?</p>
+    <button class="hidden" id="yesButton2">Yes</button>
+    <button class="hidden" id="noButton2">No</button>
+
+    <p class="hidden" id="finalMessage">Okay, chat mo na ako sa IG if mag oopen kana hehe.</p>
+    <p class="hidden" id="finalMessage2">Whyy?? Chat mo ako sa IG bakit no huhu.</p>
+
+    <script>
+        // Function to show an element
+        function showElement(elementId) {
+            const element = document.getElementById(elementId);
+            element.classList.remove('hidden');
+        }
+
+        // Function to hide an element
+        function hideElement(elementId) {
+            const element = document.getElementById(elementId);
+            element.classList.add('hidden');
+        }
+
+        // Event handling for "Yes" button
+        document.getElementById('yesButton').addEventListener('click', function () {
+            hideElement('question');
+            hideElement('yesButton');
+            hideElement('noButton');
+
+            showElement('message1');
+            showElement('okayButton1');
+            showElement('notOkayButton');
+            document.getElementById('responseImage').src = 'akonimo.mp4';
+        });
+
+        // Event handling for "No" button
+        document.getElementById('noButton').addEventListener('click', function () {
+            hideElement('question');
+            hideElement('yesButton');
+            hideElement('noButton');
+
+            showElement('message2');
+            showElement('okayButton2');
+            document.getElementById('responseImage').src = 'https://tenor.com/view/cat-cat-jumping-cat-excited-excited-dance-gif-19354605.gif';
+        });
+
+        // Event handling for "Okay" button (after the second message)
+        document.getElementById('okayButton2').addEventListener('click', function () {
+            hideElement('message2');
+            hideElement('okayButton2');
+
+            showElement('message3');
+            showElement('yesButton2');
+            showElement('noButton2');
+        });
+
+        // Event handling for "No" button (final message)
+        document.getElementById('noButton2').addEventListener('click', function () {
+            hideElement('message3');
+            hideElement('yesButton2');
+            hideElement('noButton2');
+
+            showElement('finalMessage2');
+            document.getElementById('responseImage').src = 'akonimo.mp4';
+        });
+
+        // Function for handling "Okay" button response
+        function notOkayResponse() {
+            alert('sheeeesh! kung ang coconut kay lubi, kiss ko bi *rizz*🤭 e-chat ko kung pedi HAHAHA)');
+        }
+
+        // Function to move the "dili lang" button
+        function moveButton() {
+            const button = document.getElementById('okayButton1');
+            button.style.position = 'absolute';
+            button.style.left = Math.random() * (window.innerWidth - button.clientWidth) + 'px';
+            button.style.top = Math.random() * (window.innerHeight - button.clientHeight) + 'px';
+        }
+    </script>
+</body>
+</html>
