@@ -102,7 +102,14 @@
             document.getElementById('responseImage').classList.remove('hidden');
             document.getElementById('responseVideo').classList.add('hidden');
         });
+        document.getElementById('okayButton2').addEventListener('click', function () {
+            hideElement('message2');
+            hideElement('okayButton2');
 
+            showElement('message3');
+            showElement('yesButton2');
+            showElement('noButton2');
+        });
         // Function for handling "Okay" button response
         function notOkayResponse() {
             alert('sheeeesh! kung ang coconut kay lubi, pedi mo-kiss ko bi *rizz*🤭 e-chat ko kung pedi HAHAHA');
