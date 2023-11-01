@@ -3,46 +3,9 @@
 <head>
     <title>Chelsea FineASF🔥🥵</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles.css">
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            background-color: #f0f0f0;
-            transition: background-color 0.3s;
-        }
-
-        .hidden {
-            display: none;
-        }
-
-        h1 {
-            margin: 20px;
-            color: #333;
-            transition: color 0.3s;
-        }
-
-        p {
-            color: #555;
-        }
-
-        img, video {
-            transition: transform 0.2s;
-        }
-
-        button {
-            background-color: #3498db;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            margin: 10px;
-            cursor: pointer;
-            border-radius: 5px;
-            transition: background-color 0.2s;
-        }
-
-        button:hover {
-            background-color: #2980b9;
-        }
+        /* Your CSS styles here */
     </style>
 </head>
 <body>
@@ -61,72 +24,60 @@
     <button class="hidden" id="notOkayButton" onclick="notOkayResponse()">pedi</button>
 
     <p class="hidden" id="message2">pedi ako nalang sheesh ana diay dayon</p>
-    <button class="hidden" id="okayButton2">Okay</button>
+    <button class="hidden" id="okayButton2" onclick="showMessage3()">Okay</button>
 
     <p class="hidden" id="message3">echat ko unsay maingon nimo ana jud dayon HAHAHA</p>
 
     <script>
-        // Function to show an element
         function showElement(elementId) {
             const element = document.getElementById(elementId);
             element.classList.remove('hidden');
         }
 
-        // Function to hide an element
         function hideElement(elementId) {
             const element = document.getElementById(elementId);
             element.classList.add('hidden');
         }
 
-        // Event handling for "Yes" button
+        function showMessage3() {
+            hideElement('message2');
+            hideElement('okayButton2');
+            showElement('message3');
+            document.getElementById('responseVideo').src = 'katik.mp4'; // Set the video source
+            document.getElementById('responseImage').src = '';   // Set the image source
+            document.getElementById('responseVideo').classList.remove('hidden');
+            document.getElementById('responseImage').classList.add('hidden');
+        }
+
         document.getElementById('yesButton').addEventListener('click', function () {
             hideElement('question');
             hideElement('yesButton');
             hideElement('noButton');
-
             showElement('message1');
             showElement('okayButton1');
             showElement('notOkayButton');
-
             document.getElementById('responseVideo').src = 'akonimo.mp4'; // Set the video source
             document.getElementById('responseImage').src = '';   // Set the image source
-            
             document.getElementById('responseVideo').classList.remove('hidden');
             document.getElementById('responseImage').classList.add('hidden');
         });
 
-        // Event handling for "No" button
         document.getElementById('noButton').addEventListener('click', function () {
             hideElement('question');
             hideElement('yesButton');
             hideElement('noButton');
-
             showElement('message2');
             showElement('okayButton2');
             document.getElementById('responseVideo').src = 'katik.mp4'; // Set the video source
             document.getElementById('responseImage').src = '';   // Set the image source
-            
             document.getElementById('responseVideo').classList.remove('hidden');
             document.getElementById('responseImage').classList.add('hidden');
         });
-        document.getElementById('okayButton2').addEventListener('click', function () {
-            hideElement('message2');
-            hideElement('okayButton2');
 
-            showElement('message3');
-            
-            document.getElementById('responseVideo').src = 'katik.mp4'; // Set the video source
-            document.getElementById('responseImage').src = '';   // Set the image source
-            
-            document.getElementById('responseVideo').classList.remove('hidden');
-            document.getElementById('responseImage').classList.add('hidden');
-        });
-        // Function for handling "Okay" button response
         function notOkayResponse() {
             alert('sheeeesh! kung ang coconut kay lubi, pedi mo-kiss ko bi *rizz*🤭 e-chat ko kung pedi HAHAHA');
         }
 
-        // Function to move the "dili lang" button
         function moveButton() {
             const button = document.getElementById('okayButton1');
             button.style.position = 'absolute';
