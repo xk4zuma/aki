@@ -25,7 +25,8 @@
             color: #555;
         }
 
-        img {
+        video {
+            width: 75%;
             transition: transform 0.2s;
         }
 
@@ -46,14 +47,24 @@
     </style>
 </head>
 <body>
+    <!-- Background music -->
+    <audio id="backgroundMusic" autoplay loop>
+        <source src="background-music.mp3" type="audio/mpeg">
+        Your browser does not support the audio tag.
+    </audio>
+
     <h3><br>Kainit sa kalibutan<br>biskan unsaon nakog paypay <br>ikaw ragyud akung kalipay 🫢<br> *w/ bisaya rizz*</h3>
-    <img id="responseImage" src="https://media.giphy.com/media/KI5JqBqOKCPjG/giphy.gif" width="75%">
+    <video id="responseVideo" controls>
+        <source src="your-video-file.mp4" type="video/mp4">
+        <!-- Add more source elements for other formats if needed -->
+        Your browser does not support the video tag.
+    </video>
     <p id="question">ask lang ko if <br>naa kay gina entertain ron?🥸</p>
     <button id="yesButton">Naa</button>
     <button id="noButton">Wala</button>
 
     <p class="hidden" id="message1">pedi ako nalang e-entertain nmo?</p>
-    <button class="hidden" id="okayButton1" onclick="moveButton()">dili lang</button>
+    <button class="hidden" id="okayButton1">dili lang</button>
     <button class="hidden" id="notOkayButton" onclick="notOkayResponse()">pedi</button>
 
     <p class="hidden" id="message2">Yiee.. so it means pinapatawad mo na ako hehe.</p>
@@ -79,6 +90,14 @@
             element.classList.add('hidden');
         }
 
+        // Function to change the video source
+        function changeVideoSource(videoFile) {
+            const videoElement = document.getElementById('responseVideo');
+            const sourceElement = videoElement.querySelector('source');
+            sourceElement.src = videoFile;
+            videoElement.load();
+        }
+
         // Event handling for "Yes" button
         document.getElementById('yesButton').addEventListener('click', function () {
             hideElement('question');
@@ -88,7 +107,7 @@
             showElement('message1');
             showElement('okayButton1');
             showElement('notOkayButton');
-            document.getElementById('responseImage').src = 'akonimo.mp4';
+            changeVideoSource('new-video-file.mp4'); // Change to the desired video file
         });
 
         // Event handling for "No" button
@@ -99,7 +118,7 @@
 
             showElement('message2');
             showElement('okayButton2');
-            document.getElementById('responseImage').src = 'https://tenor.com/view/cat-cat-jumping-cat-excited-excited-dance-gif-19354605.gif';
+            changeVideoSource('new-video-file2.mp4'); // Change to another video file
         });
 
         // Event handling for "Okay" button (after the second message)
@@ -119,20 +138,12 @@
             hideElement('noButton2');
 
             showElement('finalMessage2');
-            document.getElementById('responseImage').src = 'akonimo.mp4';
+            changeVideoSource('new-video-file3.mp4'); // Change to another video file
         });
 
         // Function for handling "Okay" button response
         function notOkayResponse() {
-            alert('sheeeesh! kung ang coconut kay lubi, kiss ko bi *rizz*🤭 e-chat ko kung pedi HAHAHA');
-        }
-
-        // Function to move the "dili lang" button
-        function moveButton() {
-            const button = document.getElementById('okayButton1');
-            button.style.position = 'absolute';
-            button.style.left = Math.random() * (window.innerWidth - button.clientWidth) + 'px';
-            button.style.top = Math.random() * (window.innerHeight - button.clientHeight) + 'px';
+            alert('sheeeesh! kung ang coconut kay lubi, kiss ko bi *rizz*🤭 e-chat ko kung pedi HAHAHA)');
         }
     </script>
 </body>
