@@ -46,14 +46,10 @@
     </style>
 </head>
 <body>
-    <audio id="backgroundMusic" autoplay loop>
-        <source src="ldr.mp3" type="audio/mpeg">
-        Your browser does not support the audio tag.
-    </audio>
     <h3><br>Kainit sa kalibutan<br>biskan unsaon nakog paypay <br>ikaw ragyud akung kalipay 🫢<br> *w/ bisaya rizz*</h3>
     <img id="responseImage" src="https://media.giphy.com/media/KI5JqBqOKCPjG/giphy.gif" width="75%">
-    <video id="responseVideo" width="75%" controls class="hidden">
-        <source src="video.mp4" type="video/mp4">
+    <video id="responseVideo" width="50%" controls class="hidden">
+        <source src="akonimo.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
     <p id="question">ask lang ko if <br>naa kay gina entertain ron?🥸</p>
@@ -67,12 +63,7 @@
     <p class="hidden" id="message2">pedi ako nalang sheesh ana diay dayon</p>
     <button class="hidden" id="okayButton2">Okay</button>
 
-    <p class="hidden" id="message3">blank</p>
-    <button class="hidden" id="yesButton2">Yes</button>
-    <button class="hidden" id="noButton2">No</button>
-
-    <p class="hidden" id="finalMessage">blank </p>
-    <p class="hidden" id="finalMessage2">blank</p>
+    <p class="hidden" id="message3">echat ko unsay maingon nimo ana jud dayon HAHAHA</p>
 
     <script>
         // Function to show an element
@@ -110,27 +101,6 @@
             showElement('okayButton2');
             document.getElementById('responseImage').classList.remove('hidden');
             document.getElementById('responseVideo').classList.add('hidden');
-        });
-
-        // Event handling for "Okay" button (after the second message)
-        document.getElementById('okayButton2').addEventListener('click', function () {
-            hideElement('message2');
-            hideElement('okayButton2');
-
-            showElement('message3');
-            showElement('yesButton2');
-            showElement('noButton2');
-        });
-
-        // Event handling for "No" button (final message)
-        document.getElementById('noButton2').addEventListener('click', function () {
-            hideElement('message3');
-            hideElement('yesButton2');
-            hideElement('noButton2');
-
-            showElement('finalMessage2');
-            document.getElementById('responseVideo').classList.remove('hidden');
-            document.getElementById('responseImage').classList.add('hidden');
         });
 
         // Function for handling "Okay" button response
