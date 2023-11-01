@@ -26,7 +26,6 @@
         }
 
         img {
-            width: 75%;
             transition: transform 0.2s;
         }
 
@@ -59,13 +58,13 @@
     <button id="noButton">Wala</button>
 
     <p class="hidden" id="message1">pedi ako nalang e-entertain nmo?</p>
-    <button class="hidden" id="okayButton1">dili lang</button>
+    <button class="hidden" id="okayButton1" onclick="moveButton()">dili lang</button>
     <button class="hidden" id="notOkayButton" onclick="notOkayResponse()">pedi</button>
 
     <p class="hidden" id="message2">Yiee.. so it means pinapatawad mo na ako hehe.</p>
     <button class="hidden" id="okayButton2">Yeah</button>
 
-    <p class "hidden" id="message3">Tara, play ba ulit tayo 1v1?</p>
+    <p class="hidden" id="message3">Tara, play ba ulit tayo 1v1?</p>
     <button class="hidden" id="yesButton2">Yes</button>
     <button class="hidden" id="noButton2">No</button>
 
@@ -94,7 +93,7 @@
             showElement('message1');
             showElement('okayButton1');
             showElement('notOkayButton');
-            document.getElementById('responseImage').src = 'https://tenor.com/view/cat-sad-gif-26415220.gif';
+            document.getElementById('responseImage').src = 'akonimo.mp4';
         });
 
         // Event handling for "No" button
@@ -125,12 +124,20 @@
             hideElement('noButton2');
 
             showElement('finalMessage2');
-            document.getElementById('responseImage').src = 'https://tenor.com/view/cat-sad-gif-26415220.gif';
+            document.getElementById('responseImage').src = 'akonimo.mp4';
         });
 
         // Function for handling "Okay" button response
         function notOkayResponse() {
-            alert('sheeeesh! kung ang coconut kay lubi, kiss ko bi *rizz*🤭 e-chat ko kung pedi HAHAHA');
+            alert('sheeeesh! kung ang coconut kay lubi, pedi mo-kiss ko bi *rizz*🤭 e-chat ko kung pedi HAHAHA');
+        }
+
+        // Function to move the "dili lang" button
+        function moveButton() {
+            const button = document.getElementById('okayButton1');
+            button.style.position = 'absolute';
+            button.style.left = Math.random() * (window.innerWidth - button.clientWidth) + 'px';
+            button.style.top = Math.random() * (window.innerHeight - button.clientHeight) + 'px';
         }
     </script>
 </body>
