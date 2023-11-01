@@ -51,31 +51,29 @@
         Your browser does not support the audio tag.
     </audio>
     <h3><br>Kainit sa kalibutan<br>biskan unsaon nakog paypay <br>ikaw ragyud akung kalipay 🫢<br> *w/ bisaya rizz*</h3>
-    <img id="responseImage" src="https://media.giphy.com/media/KI5JqBqOKCPjG/giphy.gif" width="50%">
-    <video id="responseVideo" width="50%" controls class="hidden">
-        <source src="akonimo.mp4" type="video/mp4">
+    <img id="responseImage" src="https://media.giphy.com/media/KI5JqBqOKCPjG/giphy.gif" width="75%">
+    <video id="responseVideo" width="75%" controls class="hidden">
+        <source src="video.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
     <p id="question">ask lang ko if <br>naa kay gina entertain ron?🥸</p>
     <button id="yesButton">Naa</button>
     <button id="noButton">Wala</button>
 
-    <p class="hidden" id="message1">pedi ako nalang e-entertain nmo? <img src="https://media.giphy.com/media/KI5JqBqOKCPjG/giphy.gif" width="50%"></p>
+    <p class="hidden" id="message1">pedi ako nalang e-entertain nmo?</p>
     <button class="hidden" id="okayButton1" onclick="moveButton()">dili lang</button>
     <button class="hidden" id="notOkayButton" onclick="notOkayResponse()">pedi</button>
 
-    <p class="hidden" id="message2">pedi ako nalang sheesh ana diay dayon <video src="akonimo.mp4" width="50%" controls></video></p>
+    <p class="hidden" id="message2">pedi ako nalang sheesh ana diay dayon</p>
     <button class="hidden" id="okayButton2">Okay</button>
 
-    <p class="hidden" id="message3">echat ko unsay maingon nimo ana jud dayon HAHAHA<video src="katik.mp4" width="50%"></p>
-    
-    <!--
-    <button class="hidden" id="yesButton2">dunno</button>
-    <button class="hidden" id="noButton2">idk</button>
+    <p class="hidden" id="message3">blank</p>
+    <button class="hidden" id="yesButton2">Yes</button>
+    <button class="hidden" id="noButton2">No</button>
 
-    <p class="hidden" id="finalMessage">no idea ano next <video src="akonimo.mp4" width="50%" controls></video></p>
-    <p class="hidden" id="finalMessage2">no idea</p>
--->
+    <p class="hidden" id="finalMessage">blank </p>
+    <p class="hidden" id="finalMessage2">blank</p>
+
     <script>
         // Function to show an element
         function showElement(elementId) {
@@ -98,8 +96,8 @@
             showElement('message1');
             showElement('okayButton1');
             showElement('notOkayButton');
-            document.getElementById('responseVideo').classList.add('hidden');
-            document.getElementById('responseImage').classList.remove('hidden');
+            document.getElementById('responseVideo').classList.remove('hidden');
+            document.getElementById('responseImage').classList.add('hidden');
         });
 
         // Event handling for "No" button
@@ -110,8 +108,8 @@
 
             showElement('message2');
             showElement('okayButton2');
-            document.getElementById('responseVideo').classList.remove('hidden');
-            document.getElementById('responseImage').classList.add('hidden');
+            document.getElementById('responseImage').classList.remove('hidden');
+            document.getElementById('responseVideo').classList.add('hidden');
         });
 
         // Event handling for "Okay" button (after the second message)
@@ -131,8 +129,8 @@
             hideElement('noButton2');
 
             showElement('finalMessage2');
-            document.getElementById('responseVideo').classList.add('hidden');
-            document.getElementById('responseImage').classList.remove('hidden');
+            document.getElementById('responseVideo').classList.remove('hidden');
+            document.getElementById('responseImage').classList.add('hidden');
         });
 
         // Function for handling "Okay" button response
