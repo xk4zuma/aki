@@ -25,7 +25,7 @@
             color: #555;
         }
 
-        img {
+        img, video {
             transition: transform 0.2s;
         }
 
@@ -52,6 +52,10 @@
     </audio>
     <h3><br>Kainit sa kalibutan<br>biskan unsaon nakog paypay <br>ikaw ragyud akung kalipay 🫢<br> *w/ bisaya rizz*</h3>
     <img id="responseImage" src="https://media.giphy.com/media/KI5JqBqOKCPjG/giphy.gif" width="75%">
+    <video id="responseVideo" width="75%" controls class="hidden">
+        <source src="akonimo.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
     <p id="question">ask lang ko if <br>naa kay gina entertain ron?🥸</p>
     <button id="yesButton">Naa</button>
     <button id="noButton">Wala</button>
@@ -92,7 +96,8 @@
             showElement('message1');
             showElement('okayButton1');
             showElement('notOkayButton');
-            document.getElementById('responseImage').src = 'akonimo.mp4';
+            document.getElementById('responseVideo').classList.remove('hidden');
+            document.getElementById('responseImage').classList.add('hidden');
         });
 
         // Event handling for "No" button
@@ -103,7 +108,8 @@
 
             showElement('message2');
             showElement('okayButton2');
-            document.getElementById('responseImage').src = 'https://tenor.com/view/cat-cat-jumping-cat-excited-excited-dance-gif-19354605.gif';
+            document.getElementById('responseImage').classList.remove('hidden');
+            document.getElementById('responseVideo').classList.add('hidden');
         });
 
         // Event handling for "Okay" button (after the second message)
@@ -123,7 +129,8 @@
             hideElement('noButton2');
 
             showElement('finalMessage2');
-            document.getElementById('responseImage').src = 'akonimo.mp4';
+            document.getElementById('responseVideo').classList.remove('hidden');
+            document.getElementById('responseImage').classList.add('hidden');
         });
 
         // Function for handling "Okay" button response
@@ -141,4 +148,3 @@
     </script>
 </body>
 </html>
-
